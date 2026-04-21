@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rise Media Dubai | Get Featured in the World's Top Publications</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green:  #0B3D2E;
+      --green2: #607A61;
+      --gold:   #BC9C5F;
+      --cream:  #F3E6CE;
+      --white:  #ffffff;
+      --black:  #111111;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Crimson Pro', serif; }
+
+    /* ── NAV ──────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 40px;
+      background: rgba(11, 61, 46, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(188, 156, 95, 0.15);
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+      gap: 3px;
+    }
+
+    .logo-name {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .logo-city {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 5px;
+      color: rgba(188, 156, 95, 0.6);
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--green);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle radial glow */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(188,156,95,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(188, 156, 95, 0.35);
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 8px 22px;
+      border-radius: 100px;
+      margin-bottom: 44px;
+      font-family: 'Lato', sans-serif;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .badge span { opacity: 0.5; }
+
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 70px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 860px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.7s 0.15s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: rgba(243, 230, 206, 0.72);
+      max-width: 560px;
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 52px;
+      animation: fadeUp 0.7s 0.28s ease both;
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 19px 52px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    .cta:hover {
+      background: #cead75;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(188, 156, 95, 0.35);
+    }
+
+    /* ── MEDIA STRIP ──────────────────────────────────── */
+    .media-strip {
+      background: var(--cream);
+      padding: 52px 24px;
+      text-align: center;
+    }
+
+    .strip-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green2);
+      margin-bottom: 28px;
+    }
+
+    .outlets {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 36px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .outlet {
+      font-family: 'Crimson Pro', serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--green);
+      opacity: 0.45;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s;
+    }
+
+    .outlet:hover { opacity: 0.9; }
+
+    .outlets .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* ── WHY SECTION ──────────────────────────────────── */
+    .why {
+      background: var(--green);
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .section-tag {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .why h2 {
+      font-size: clamp(28px, 3.8vw, 50px);
+      font-weight: 700;
+      color: var(--white);
+      max-width: 720px;
+      margin: 0 auto 16px;
+      line-height: 1.2;
+    }
+
+    .why h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 32px auto 60px;
+      opacity: 0.6;
+    }
+
+    .points {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(188, 156, 95, 0.1);
+      text-align: left;
+    }
+
+    .point:last-child { border-bottom: none; }
+
+    .point-num {
+      font-family: 'Crimson Pro', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: rgba(188, 156, 95, 0.18);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 52px;
+    }
+
+    .point-body h3 {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .point-body p {
+      font-size: 15px;
+      color: rgba(243, 230, 206, 0.65);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── BOTTOM CTA ───────────────────────────────────── */
+    .bottom-cta {
+      background: var(--cream);
+      padding: 110px 24px;
+      text-align: center;
+    }
+
+    .bottom-cta h2 {
+      font-size: clamp(28px, 4vw, 54px);
+      font-weight: 700;
+      color: var(--green);
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.15;
+    }
+
+    .bottom-cta h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .bottom-cta p {
+      font-size: 17px;
+      color: rgba(11, 61, 46, 0.6);
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+
+    .cta-green {
+      display: inline-block;
+      background: var(--green);
+      color: var(--gold);
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 19px 52px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+    .cta-green:hover {
+      background: #0d4a37;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(11, 61, 46, 0.25);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    footer {
+      background: #07211a;
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    footer .logo-name  { font-size: 16px; }
+    footer .logo-city  { opacity: 0.4; }
+
+    .footer-copy {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(243, 230, 206, 0.25);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── ANIMATION ────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 640px) {
+      .nav { padding: 18px 24px; }
+      .outlets { gap: 8px 20px; }
+      .outlet  { font-size: 15px; }
+      .point   { flex-direction: column; gap: 8px; }
+      .point-num { font-size: 28px; width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="logo">
+      <span class="logo-name">Rise Media</span>
+      <span class="logo-city">Dubai</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge"><span>✦</span> Featured in 800+ Global Publications <span>✦</span></div>
+
+    <h1>Your Competitors Are Already<br>in the Headlines.<br><em>It's Time You Were Too.</em></h1>
+
+    <p class="hero-sub">
+      Rise Media Dubai secures guaranteed press placements for founders, coaches, real estate agents, and brands — in Bloomberg, Forbes, TechCrunch, USA Today, and 800+ more.
+    </p>
+
+    <!-- Single funnel CTA — swap href for form page when ready -->
+    <a class="cta" href="form.html">Claim Your Media Feature</a>
+  </section>
+
+  <!-- AS FEATURED IN -->
+  <div class="media-strip">
+    <p class="strip-label">We've Placed Our Clients In</p>
+    <div class="outlets">
+      <span class="outlet">Bloomberg</span>
+      <span class="dot"></span>
+      <span class="outlet">Forbes</span>
+      <span class="dot"></span>
+      <span class="outlet">TechCrunch</span>
+      <span class="dot"></span>
+      <span class="outlet">USA Today</span>
+      <span class="dot"></span>
+      <span class="outlet">Business Insider</span>
+      <span class="dot"></span>
+      <span class="outlet">Entrepreneur</span>
+      <span class="dot"></span>
+      <span class="outlet">Yahoo Finance</span>
+      <span class="dot"></span>
+      <span class="outlet">AP News</span>
+      <span class="dot"></span>
+      <span class="outlet">MarketWatch</span>
+      <span class="dot"></span>
+      <span class="outlet">+ 800 more</span>
+    </div>
+  </div>
+
+  <!-- WHY RISE MEDIA -->
+  <section class="why">
+    <span class="section-tag">Why Rise Media Dubai</span>
+    <h2>Press Coverage That<br>Builds <em>Real Authority</em></h2>
+    <div class="rule"></div>
+
+    <div class="points">
+      <div class="point">
+        <span class="point-num">01</span>
+        <div class="point-body">
+          <h3>Guaranteed Placements</h3>
+          <p>We don't pitch and hope. We deliver confirmed placements in top-tier publications — giving your brand the credibility it deserves.</p>
+        </div>
+      </div>
+      <div class="point">
+        <span class="point-num">02</span>
+        <div class="point-body">
+          <h3>Built for Business Owners</h3>
+          <p>From real estate agents to eco brands and startup founders — our campaigns are tailored to your niche, your story, and your goals.</p>
+        </div>
+      </div>
+      <div class="point">
+        <span class="point-num">03</span>
+        <div class="point-body">
+          <h3>A Network You Can't Buy Alone</h3>
+          <p>800+ journalist and editor relationships built over years. We open doors that cold outreach never will.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <h2>Stop Watching Competitors<br>Get the Press <em>You Deserve.</em></h2>
+    <p>Book a free 15-minute strategy call and we'll map out your first placement.</p>
+    <a class="cta-green" href="form.html">Get Started — It's Free</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">
+      <span class="logo-name">Rise Media</span>
+      <span class="logo-city">Dubai</span>
+    </div>
+    <p class="footer-copy">© 2025 Rise Media Dubai. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
