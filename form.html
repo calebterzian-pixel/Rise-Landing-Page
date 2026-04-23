@@ -302,8 +302,21 @@
   </div>
 
   <script>
-    document.getElementById('apply-form').addEventListener('submit', function (e) {
+    document.getElementById('apply-form').addEventListener('submit', async function (e) {
       e.preventDefault();
+      const btn   = this.querySelector('.submit');
+      btn.textContent = 'Sending…';
+      btn.disabled    = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+          method:  'POST',
+          body:    new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        // Proceed to calendar regardless — Formspree handles the email
+      } catch (_) {}
+
       window.location.href = 'calendar.html';
     });
   </script>
