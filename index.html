@@ -204,30 +204,29 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 10px 36px;
-      max-width: 880px;
+      gap: 28px 52px;
+      max-width: 920px;
       margin: 0 auto;
     }
 
-    .outlet {
-      font-family: 'Crimson Pro', serif;
-      font-weight: 600;
-      font-size: 17px;
-      color: var(--green);
-      opacity: 0.45;
-      letter-spacing: 0.5px;
-      transition: opacity 0.2s;
+    .press-logo {
+      height: 28px;
+      width: auto;
+      display: block;
+      filter: grayscale(100%) opacity(0.5);
+      transition: filter 0.2s;
     }
 
-    .outlet:hover { opacity: 0.9; }
+    .press-logo:hover { filter: grayscale(100%) opacity(0.85); }
 
-    .outlets .dot {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--gold);
+    .more-label {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
       opacity: 0.4;
-      flex-shrink: 0;
     }
 
     /* ── WHY SECTION ──────────────────────────────────── */
@@ -470,25 +469,14 @@
   <div class="media-strip">
     <p class="strip-label">We've Placed Our Clients In</p>
     <div class="outlets">
-      <span class="outlet">Bloomberg</span>
-      <span class="dot"></span>
-      <span class="outlet">Forbes</span>
-      <span class="dot"></span>
-      <span class="outlet">TechCrunch</span>
-      <span class="dot"></span>
-      <span class="outlet">USA Today</span>
-      <span class="dot"></span>
-      <span class="outlet">Business Insider</span>
-      <span class="dot"></span>
-      <span class="outlet">Entrepreneur</span>
-      <span class="dot"></span>
-      <span class="outlet">Yahoo Finance</span>
-      <span class="dot"></span>
-      <span class="outlet">AP News</span>
-      <span class="dot"></span>
-      <span class="outlet">MarketWatch</span>
-      <span class="dot"></span>
-      <span class="outlet">+ 800 more</span>
+      <img class="press-logo" src="press-logos/forbes.png"       alt="Forbes">
+      <img class="press-logo" src="press-logos/entrepreneur.png" alt="Entrepreneur">
+      <img class="press-logo" src="press-logos/time.png"         alt="TIME">
+      <img class="press-logo" src="press-logos/usa-today.png"    alt="USA Today">
+      <img class="press-logo" src="press-logos/vogue.png"        alt="Vogue">
+      <img class="press-logo" src="press-logos/la-weekly.png"    alt="LA Weekly">
+      <img class="press-logo" src="press-logos/maxim.jpg"        alt="Maxim">
+      <span class="more-label">+ 800 more</span>
     </div>
   </div>
 
