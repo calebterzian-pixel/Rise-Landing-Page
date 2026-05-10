@@ -32,9 +32,7 @@
 
     /* ── NAV ──────────────────────────────────────────── */
     .nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 99;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -67,7 +65,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 150px 24px 110px;
+      padding: 80px 24px 110px;
       position: relative;
       overflow: hidden;
     }
@@ -480,7 +478,7 @@
     /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 640px) {
       .nav { padding: 12px 20px; }
-      .hero { min-height: auto; padding: 120px 24px 52px; }
+      .hero { min-height: auto; padding: 60px 24px 52px; }
       .outlets { gap: 16px 24px; }
       .press-logo { height: 22px; }
       .point { flex-direction: column; gap: 8px; }
