@@ -174,13 +174,23 @@
       cursor: pointer;
       text-decoration: none;
       transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-      animation: fadeUp 0.7s 0.4s ease both;
+      animation: fadeUp 0.7s 0.4s ease both, ctaWiggle 0.55s 1.8s ease 1, ctaGlow 2.8s 2.6s ease-in-out infinite;
     }
 
     .cta:hover {
       background: #cead75;
       transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(188, 156, 95, 0.35);
+      box-shadow: 0 12px 36px rgba(188, 156, 95, 0.45);
+    }
+
+    .scarcity {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: rgba(243, 230, 206, 0.42);
+      margin-top: 18px;
+      font-weight: 300;
+      animation: fadeUp 0.7s 0.55s ease both;
     }
 
     /* ── MEDIA STRIP ──────────────────────────────────── */
@@ -390,19 +400,93 @@
       letter-spacing: 0.5px;
     }
 
+    /* ── TESTIMONIALS ─────────────────────────────────── */
+    .testimonials {
+      background: var(--cream);
+      padding: 72px 24px 80px;
+      text-align: center;
+    }
+
+    .testi-label {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      opacity: 0.5;
+      margin-bottom: 48px;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testi-card {
+      background: #fff;
+      border-top: 3px solid var(--gold);
+      padding: 36px 32px;
+      text-align: left;
+    }
+
+    .testi-quote {
+      font-family: 'Crimson Pro', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--green);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .testi-author {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .testi-author span {
+      font-weight: 300;
+      color: rgba(11, 61, 46, 0.45);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
     /* ── ANIMATION ────────────────────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes ctaWiggle {
+      0%, 100% { transform: translateX(0); }
+      20%      { transform: translateX(-7px); }
+      40%      { transform: translateX(7px); }
+      60%      { transform: translateX(-4px); }
+      80%      { transform: translateX(4px); }
+    }
+
+    @keyframes ctaGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(188, 156, 95, 0); }
+      50%      { box-shadow: 0 0 0 9px rgba(188, 156, 95, 0.2), 0 8px 32px rgba(188, 156, 95, 0.22); }
+    }
+
     /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 640px) {
       .nav { padding: 12px 20px; }
-      .outlets { gap: 8px 20px; }
-      .outlet  { font-size: 15px; }
-      .point   { flex-direction: column; gap: 8px; }
+      .hero { min-height: auto; padding: 120px 24px 52px; }
+      .outlets { gap: 16px 24px; }
+      .press-logo { height: 22px; }
+      .point { flex-direction: column; gap: 8px; }
       .point-num { font-size: 28px; width: auto; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .testi-card { padding: 28px 24px; }
     }
   </style>
 
@@ -481,6 +565,7 @@
     </p>
 
     <a class="cta" href="form.html">Claim Your Media Feature</a>
+    <p class="scarcity">Current spots are filling faster than expected.</p>
   </section>
 
   <!-- AS FEATURED IN -->
@@ -497,6 +582,34 @@
       <span class="more-label">+ 800 more</span>
     </div>
   </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <span class="testi-label">What Our Clients Say</span>
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <p class="testi-quote">"We'd worked with PR freelancers before, but this was the first time the process actually felt organized. Within a few weeks we had coverage we were proud to send to investors and customers."</p>
+        <p class="testi-author">— Daniel R. <span>· Founder, wellness brand</span></p>
+      </div>
+
+      <div class="testi-card">
+        <p class="testi-quote">"The biggest difference was the speed. We went from 'nobody knows who we are' to having articles we could use in sales conversations almost immediately."</p>
+        <p class="testi-author">— Melissa T. <span>· E-commerce operator</span></p>
+      </div>
+
+      <div class="testi-card">
+        <p class="testi-quote">"We'd been trying to get media attention on our own for months. This was the first time we actually got through with legitimate publications."</p>
+        <p class="testi-author">— Erica P. <span>· Startup founder</span></p>
+      </div>
+
+      <div class="testi-card">
+        <p class="testi-quote">"I liked that the messaging still sounded like us. A lot of PR companies make everything feel corporate — this felt natural and authentic."</p>
+        <p class="testi-author">— Jordan K. <span>· SaaS founder</span></p>
+      </div>
+
+    </div>
+  </section>
 
   <!-- WHY RISE MEDIA -->
   <section class="why">
